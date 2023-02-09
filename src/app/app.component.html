@@ -1,0 +1,50 @@
+<div class="p-grid p-fluid">
+  <div class="p-field p-col-12 p-md-3">
+    <label for="integeronly">PNC No</label>
+    <p-autoComplete
+      [(ngModel)]="texts"
+      [suggestions]="results"
+      (completeMethod)="search($event)"
+      [multiple]="true"
+      showClear="true"
+    ></p-autoComplete>
+  </div>
+  <div class="p-field p-col-12 p-md-3">
+    <label for="withoutgrouping">Status</label>
+    <p-multiSelect
+      showClear="true"
+      [options]="cities"
+      [(ngModel)]="selectedCities"
+      optionLabel="name"
+      display="chip"
+    ></p-multiSelect>
+  </div>
+</div>
+<p-button label="Search" icon="pi pi-search" [loading]="isLoading"></p-button
+>&nbsp;
+<p-button
+  label="Fileter Setting"
+  icon="pi pi-filter"
+  [loading]="isLoading"
+></p-button
+>&nbsp;
+<p-splitButton
+  label="Layout"
+  icon="pi pi-list"
+  (onClick)="save('info')"
+  [model]="items"
+></p-splitButton
+>&nbsp;
+<p-splitButton
+  label="AddNew"
+  icon="pi pi-plus"
+  (onClick)="save('info')"
+  [model]="items2"
+></p-splitButton
+>&nbsp;
+<p-button
+  label="Download"
+  icon="pi pi-download"
+  [loading]="isLoading"
+></p-button
+>&nbsp;
