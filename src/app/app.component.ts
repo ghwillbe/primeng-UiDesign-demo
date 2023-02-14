@@ -3,7 +3,7 @@ import { MenuItem, MessageService } from 'primeng/api';
 import { ConfirmationService } from 'primeng/api';
 import { Message } from 'primeng/api';
 import { PrimeNGConfig } from 'primeng/api';
-import { Product } from './product';
+import { Product, SignFlow } from './product';
 import { ProductService } from './productservice';
 
 @Component({
@@ -38,6 +38,9 @@ export class AppComponent implements OnInit {
   selectedProducts: Product[];
   submitted: boolean;
   displayBasic: boolean;
+
+  // sign
+  signFlows: SignFlow[];
   constructor(
     private productService: ProductService,
     private messageService: MessageService,
@@ -73,6 +76,49 @@ export class AppComponent implements OnInit {
       this.products = data;
       this.approvelProducts = data.filter((o) => o.inventoryStatus == 'Open');
     });
+
+    this.signFlows = [
+      {
+        approvalStep: 1,
+        approvalRole: 'FromBuyer',
+        approver: 'Test001',
+        approvalResults: 'Approved',
+        comments: 'test',
+        approvalDate: '2023/02/01 15:00:00',
+      },
+      {
+        approvalStep: 2,
+        approvalRole: 'CE',
+        approver: 'Test001',
+        approvalResults: 'Approved',
+        comments: 'test',
+        approvalDate: '2023/02/01 15:00:00',
+      },
+      {
+        approvalStep: 3,
+        approvalRole: 'Logistic',
+        approver: 'Test001',
+        approvalResults: 'Current',
+        comments: '',
+        approvalDate: '',
+      },
+      {
+        approvalStep: 4,
+        approvalRole: 'IQA',
+        approver: 'Test001',
+        approvalResults: 'Open',
+        comments: '',
+        approvalDate: '',
+      },
+      {
+        approvalStep: 1,
+        approvalRole: 'Warehouse',
+        approver: 'Test001',
+        approvalResults: 'Open',
+        comments: '',
+        approvalDate: '',
+      },
+    ];
   }
 
   openNew() {

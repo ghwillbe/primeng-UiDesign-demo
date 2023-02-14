@@ -30,6 +30,7 @@ import { ConfirmationService } from 'primeng/api';
 import { MessageService } from 'primeng/api';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ProductService } from './productservice';
+import { FieldsetModule } from 'primeng/fieldset';
 
 @NgModule({
   imports: [
@@ -58,6 +59,7 @@ import { ProductService } from './productservice';
     RadioButtonModule,
     InputNumberModule,
     ConfirmDialogModule,
+    FieldsetModule,
     InputTextareaModule,
   ],
   providers: [ProductService, MessageService, ConfirmationService],

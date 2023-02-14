@@ -10,3 +10,12 @@ export interface Product {
   image?: string;
   rating?: number;
 }
+
+export interface SignFlow {
+  approvalStep?: number;
+  approvalRole?: string;
+  approver?: string;
+  approvalResults?: string;
+  comments?: string;
+  approvalDate?: string;
+}
