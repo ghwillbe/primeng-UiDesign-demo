@@ -41,6 +41,7 @@ export class AppComponent implements OnInit {
 
   // sign
   signFlows: SignFlow[];
+  value1: number = 0;
   constructor(
     private productService: ProductService,
     private messageService: MessageService,
@@ -89,7 +90,7 @@ export class AppComponent implements OnInit {
       {
         approvalStep: 2,
         approvalRole: 'CE',
-        approver: 'Test001',
+        approver: 'dfafafd',
         approvalResults: 'Approved',
         comments: 'test',
         approvalDate: '2023/02/01 15:00:00',
@@ -97,7 +98,7 @@ export class AppComponent implements OnInit {
       {
         approvalStep: 3,
         approvalRole: 'Logistic',
-        approver: 'Test001',
+        approver: 'fdafdgd',
         approvalResults: 'Current',
         comments: '',
         approvalDate: '',
@@ -105,15 +106,15 @@ export class AppComponent implements OnInit {
       {
         approvalStep: 4,
         approvalRole: 'IQA',
-        approver: 'Test001',
+        approver: 'hfhfg',
         approvalResults: 'Open',
         comments: '',
         approvalDate: '',
       },
       {
-        approvalStep: 1,
+        approvalStep: 5,
         approvalRole: 'Warehouse',
-        approver: 'Test001',
+        approver: 'zvcz',
         approvalResults: 'Open',
         comments: '',
         approvalDate: '',

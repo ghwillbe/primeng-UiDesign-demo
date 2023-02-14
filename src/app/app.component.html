@@ -277,7 +277,7 @@
   [(visible)]="displayBasic"
   [style]="{ width: '50vw' }"
 >
-  <p-fieldset [toggleable]="true">
+  <!-- <p-fieldset [toggleable]="true">
     <ng-template pTemplate="header">PNC List</ng-template>
     <p-table
       #dt
@@ -288,7 +288,7 @@
       dataKey="id"
       currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
       [showCurrentPageReport]="true"
-      styleClass="p-mt-4"
+      styleClass="p-datatable-sm"
     >
       <ng-template pTemplate="header">
         <tr>
@@ -316,20 +316,20 @@
         </tr>
       </ng-template>
     </p-table>
-  </p-fieldset>
+  </p-fieldset> -->
 
   <p-fieldset styleClass="p-mt-4" [toggleable]="true">
     <ng-template pTemplate="header">Sign Flow</ng-template>
     <p-table
       #dt
-      [value]="approvelProducts"
+      [value]="signFlows"
       [rows]="10"
       [paginator]="false"
       [rowHover]="true"
       dataKey="id"
       currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
       [showCurrentPageReport]="true"
-      styleClass="p-mt-4"
+      styleClass="p-datatable-sm"
     >
       <ng-template pTemplate="header">
         <tr>
@@ -341,34 +341,114 @@
           <th>Comments</th>
         </tr>
       </ng-template>
-      <ng-template pTemplate="body" let-product>
+      <ng-template pTemplate="body" let-signFlow>
         <tr>
-          <td>{{ product.id }}</td>
-          <td>{{ product.price }}</td>
-          <td>{{ product.category }}</td>
-          <td>
-            <p-rating
-              [ngModel]="product.rating"
-              [readonly]="true"
-              [cancel]="false"
-            ></p-rating>
-          </td>
+          <td>{{ signFlow.approvalStep }}</td>
+          <td>{{ signFlow.approvalRole }}</td>
+          <td>{{ signFlow.approver }}</td>
+          <td>{{ signFlow.approvalResults }}</td>
+          <td>{{ signFlow.approvalDate }}</td>
+          <td>{{ signFlow.comments }}</td>
         </tr>
       </ng-template>
     </p-table>
   </p-fieldset>
-
+  <div class="p-fluid p-mt-4">
+    <div class="p-field p-grid">
+      <label for="lastname" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
+        >*VAT</label
+      >
+      <div class="p-col-12 p-md-10">
+        <p-inputNumber inputId="integeronly" [(ngModel)]="value1">
+        </p-inputNumber>
+      </div>
+    </div>
+    <div class="p-field p-grid">
+      <label for="lastname" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
+        >*Custom Duty</label
+      >
+      <div class="p-col-12 p-md-10">
+        <p-inputNumber inputId="integeronly" [(ngModel)]="value1">
+        </p-inputNumber>
+      </div>
+    </div>
+    <div class="p-field p-grid">
+      <label for="lastname" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
+        >Comments</label
+      >
+      <div class="p-col-12 p-md-10">
+        <textarea rows="3" cols="30" pInputTextarea></textarea>
+      </div>
+    </div>
+  </div>
   <ng-template pTemplate="footer">
     <p-button
       icon="pi pi-check"
       (click)="displayBasic = false"
       label="Agree"
-      styleClass="p-button-text p-mr-4"
+      styleClass="p-button-text p-button-success p-mr-4"
     ></p-button>
     <p-button
       icon="pi pi-times"
       (click)="displayBasic = false"
       label="Reject"
+      styleClass="p-button-text p-button-danger"
+    ></p-button>
+    <p-button
+      icon="pi"
+      (click)="displayBasic = false"
+      label="Cancel"
+      styleClass="p-button-text"
+    ></p-button>
+  </ng-template>
+</p-dialog>
+
+<p-button
+  (click)="showBasicDialog()"
+  icon="pi pi-external-link"
+  label="Show"
+></p-button>
+<p-dialog
+  header="Header"
+  [(visible)]="displayBasic"
+  [style]="{ width: '50vw' }"
+>
+  <div class="p-fluid p-mt-4">
+    <div class="p-field p-grid">
+      <label for="lastname" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
+        >*Post SAP</label
+      >
+      <div class="p-col-12 p-md-5">
+        <p-radioButton
+          name="city"
+          value="New York"
+          [(ngModel)]="city"
+          inputId="city3"
+        ></p-radioButton>
+        <label for="city3">New York</label>
+      </div>
+      <div class="p-col-12 p-md-5">
+        <p-radioButton
+          name="city"
+          value="New York"
+          [(ngModel)]="city"
+          inputId="city3"
+        ></p-radioButton>
+        <label for="city3">New York</label>
+      </div>
+    </div>
+  </div>
+  <ng-template pTemplate="footer">
+    <p-button
+      icon="pi pi-check"
+      (click)="displayBasic = false"
+      label="Confirm"
+      styleClass="p-button-text p-mr-4"
+    ></p-button>
+    <p-button
+      icon="pi pi-check"
+      (click)="displayBasic = false"
+      label="Cancel"
       styleClass="p-button-text"
     ></p-button>
   </ng-template>
