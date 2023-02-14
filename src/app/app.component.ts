@@ -33,9 +33,11 @@ export class AppComponent implements OnInit {
   //table
   productDialog: boolean;
   products: Product[];
+  approvelProducts: Product[];
   product: Product;
   selectedProducts: Product[];
   submitted: boolean;
+  displayBasic: boolean;
   constructor(
     private productService: ProductService,
     private messageService: MessageService,
@@ -67,7 +69,10 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.productService.getProducts().then((data) => (this.products = data));
+    this.productService.getProducts().then((data) => {
+      this.products = data;
+      this.approvelProducts = data.filter((o) => o.inventoryStatus == 'Open');
+    });
   }
 
   openNew() {
@@ -174,6 +179,10 @@ export class AppComponent implements OnInit {
       id += chars.charAt(Math.floor(Math.random() * chars.length));
     }
     return id;
+  }
+
+  showBasicDialog() {
+    this.displayBasic = true;
   }
 }
 

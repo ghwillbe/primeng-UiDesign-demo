@@ -33,7 +33,7 @@
       "price": 79,
       "category": "Fitness",
       "quantity": 2,
-      "inventoryStatus": "Open",
+      "inventoryStatus": "Closed",
       "rating": 3
     },
     {
@@ -81,7 +81,7 @@
       "price": 32,
       "category": "Accessories",
       "quantity": 5,
-      "inventoryStatus": "Open",
+      "inventoryStatus": "Closed",
       "rating": 3
     },
     {
@@ -93,7 +93,7 @@
       "price": 34,
       "category": "Accessories",
       "quantity": 23,
-      "inventoryStatus": "Open",
+      "inventoryStatus": "Closed",
       "rating": 5
     },
     {
@@ -105,7 +105,7 @@
       "price": 99,
       "category": "Electronics",
       "quantity": 2,
-      "inventoryStatus": "Open",
+      "inventoryStatus": "Closed",
       "rating": 4
     },
     {
@@ -117,7 +117,7 @@
       "price": 299,
       "category": "Electronics",
       "quantity": 63,
-      "inventoryStatus": "Open",
+      "inventoryStatus": "Closed",
       "rating": 3
     },
     {
@@ -141,7 +141,7 @@
       "price": 89,
       "category": "Electronics",
       "quantity": 23,
-      "inventoryStatus": "Open",
+      "inventoryStatus": "Closed",
       "rating": 4
     }
   ]
