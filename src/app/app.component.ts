@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { ConfirmationService } from 'primeng/api';
+import { Message } from 'primeng/api';
+import { PrimeNGConfig } from 'primeng/api';
 
 @Component({
   selector: 'app-root',
@@ -21,6 +24,9 @@ export class AppComponent {
   selectedCities: Status[];
   items: MenuItem[];
   items2: MenuItem[];
+  items3: MenuItem[];
+  items4: MenuItem[];
+  items5: MenuItem[];
   constructor() {
     this.cities = [
       { name: 'All', code: '' },
@@ -30,10 +36,20 @@ export class AppComponent {
       { name: 'Rejected', code: 'Rejected' },
     ];
 
-    this.items = [{ label: 'Reset', icon: 'pi pi-refresh', command: () => {} }];
+    this.items = [
+      { label: 'Reset Layout', icon: 'pi pi-refresh', command: () => {} },
+    ];
 
     this.items2 = [
-      { label: 'Mass Upload', icon: 'pi pi-upload', command: () => {} },
+      { label: 'Add in batches', icon: 'pi pi-upload', command: () => {} },
+    ];
+    this.items3 = [
+      { label: 'Copy selection', icon: 'pi pi-copy', command: () => {} },
+      { label: 'Cancel selections', icon: 'pi pi-trash', command: () => {} },
+    ];
+
+    this.items4 = [
+      { label: 'approve in batches', icon: 'pi pi-upload', command: () => {} },
     ];
   }
 }

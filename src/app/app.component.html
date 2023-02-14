@@ -20,31 +20,58 @@
     ></p-multiSelect>
   </div>
 </div>
-<p-button label="Search" icon="pi pi-search" [loading]="isLoading"></p-button
->&nbsp;
-<p-button
-  label="Fileter Setting"
-  icon="pi pi-filter"
-  [loading]="isLoading"
-></p-button>
-&nbsp;
-<p-splitButton
-  label="Layout"
-  icon="pi pi-list"
-  (onClick)="save('info')"
-  [model]="items"
-></p-splitButton
->&nbsp;
-<p-splitButton
-  label="AddNew"
-  icon="pi pi-plus"
-  (onClick)="save('info')"
-  [model]="items2"
-></p-splitButton
->&nbsp;
-<p-button
-  label="Download"
-  icon="pi pi-download"
-  [loading]="isLoading"
-></p-button
->&nbsp;
+
+<p-toolbar styleClass="mb-4 gap-2">
+  <ng-template pTemplate="left">
+    <p-button
+      label="Search"
+      icon="pi pi-search"
+      [loading]="isLoading"
+      class="p-mr-2"
+    ></p-button>
+    <p-button
+      label="Fileter Setting"
+      icon="pi pi-filter"
+      [loading]="isLoading"
+      class="p-mr-2"
+    ></p-button>
+    <p-splitButton
+      label="Layout"
+      icon="pi pi-list"
+      (onClick)="save('info')"
+      [model]="items"
+      class="p-mr-2"
+    ></p-splitButton>
+    <p-splitButton
+      label="AddNew"
+      icon="pi pi-plus"
+      (onClick)="save('info')"
+      [model]="items2"
+      class="p-mr-2"
+    ></p-splitButton>
+
+    <p-splitButton
+      label="Edit"
+      icon="pi pi-user-edit"
+      (onClick)="save('info')"
+      [model]="items3"
+      class="p-mr-2"
+    ></p-splitButton>
+
+    <p-splitButton
+      label="Approval"
+      icon="pi pi-plus"
+      (onClick)="save('info')"
+      [model]="items4"
+      class="p-mr-2"
+    ></p-splitButton>
+    <p-button
+      label="Download"
+      icon="pi pi-download"
+      [loading]="isLoading"
+      class="p-mr-2"
+    ></p-button>
+  </ng-template>
+
+  <ng-template pTemplate="right"> </ng-template>
+</p-toolbar>
