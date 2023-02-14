@@ -42,6 +42,8 @@ export class AppComponent implements OnInit {
   // sign
   signFlows: SignFlow[];
   value1: number = 0;
+  displayPostSAP: boolean;
+  isPostSAP: string;
   constructor(
     private productService: ProductService,
     private messageService: MessageService,
@@ -69,6 +71,9 @@ export class AppComponent implements OnInit {
 
     this.items4 = [
       { label: 'approve in batches', icon: 'pi pi-upload', command: () => {} },
+    ];
+    this.items5 = [
+      { label: 'Manual Close', icon: 'pi pi-stop', command: () => {} },
     ];
   }
 
@@ -99,23 +104,23 @@ export class AppComponent implements OnInit {
         approvalStep: 3,
         approvalRole: 'Logistic',
         approver: 'fdafdgd',
-        approvalResults: 'Current',
-        comments: '',
-        approvalDate: '',
+        approvalResults: 'Approved',
+        comments: 'test645645',
+        approvalDate: '2023/02/01 15:00:00',
       },
       {
         approvalStep: 4,
         approvalRole: 'IQA',
         approver: 'hfhfg',
-        approvalResults: 'Open',
-        comments: '',
-        approvalDate: '',
+        approvalResults: 'Approved',
+        comments: 'test32432423',
+        approvalDate: '2023/02/01 15:00:00',
       },
       {
         approvalStep: 5,
         approvalRole: 'Warehouse',
         approver: 'zvcz',
-        approvalResults: 'Open',
+        approvalResults: 'Current',
         comments: '',
         approvalDate: '',
       },
@@ -230,6 +235,11 @@ export class AppComponent implements OnInit {
 
   showBasicDialog() {
     this.displayBasic = true;
+  }
+
+  showPostSAPDialog() {
+    this.displayBasic = false;
+    this.displayPostSAP = true;
   }
 }
 

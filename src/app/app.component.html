@@ -61,9 +61,16 @@
 
       <p-splitButton
         label="Approval"
-        icon="pi pi-plus"
+        icon="pi pi-user-edit"
         (onClick)="showBasicDialog()"
         [model]="items4"
+        class="p-mr-2"
+      ></p-splitButton>
+      <p-splitButton
+        label="Post SAP"
+        icon="pi pi-plus"
+        (onClick)="showPostSAPDialog()"
+        [model]="items5"
         class="p-mr-2"
       ></p-splitButton>
       <p-button
@@ -354,7 +361,7 @@
     </p-table>
   </p-fieldset>
   <div class="p-fluid p-mt-4">
-    <div class="p-field p-grid">
+    <!-- <div class="p-field p-grid">
       <label for="lastname" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
         >*VAT</label
       >
@@ -366,6 +373,38 @@
     <div class="p-field p-grid">
       <label for="lastname" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
         >*Custom Duty</label
+      >
+      <div class="p-col-12 p-md-10">
+        <p-inputNumber inputId="integeronly" [(ngModel)]="value1">
+        </p-inputNumber>
+      </div>
+    </div> -->
+    <div class="p-field p-grid">
+      <label for="lastname" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
+        >Is Post SAP?</label
+      >
+      <div class="p-col-12 p-md-5">
+        <p-radioButton
+          name="city"
+          value="Close"
+          [(ngModel)]="isPostSAP"
+          inputId="city3"
+        ></p-radioButton>
+        <label for="city3">Close</label>
+      </div>
+      <div class="p-col-12 p-md-5">
+        <p-radioButton
+          name="city"
+          value="New York"
+          [(ngModel)]="isPostSAP"
+          inputId="isPostSAP"
+        ></p-radioButton>
+        <label for="isPostSAP">Auto Post SAP</label>
+      </div>
+    </div>
+    <div class="p-field p-grid">
+      <label for="lastname" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
+        >Actual PNC QTY</label
       >
       <div class="p-col-12 p-md-10">
         <p-inputNumber inputId="integeronly" [(ngModel)]="value1">
@@ -384,7 +423,7 @@
   <ng-template pTemplate="footer">
     <p-button
       icon="pi pi-check"
-      (click)="displayBasic = false"
+      (click)="showPostSAPDialog()"
       label="Agree"
       styleClass="p-button-text p-button-success p-mr-4"
     ></p-button>
@@ -403,20 +442,15 @@
   </ng-template>
 </p-dialog>
 
-<p-button
-  (click)="showBasicDialog()"
-  icon="pi pi-external-link"
-  label="Show"
-></p-button>
 <p-dialog
-  header="Header"
-  [(visible)]="displayBasic"
+  header="Information"
+  [(visible)]="displayPostSAP"
   [style]="{ width: '50vw' }"
 >
   <div class="p-fluid p-mt-4">
     <div class="p-field p-grid">
       <label for="lastname" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
-        >*Post SAP</label
+        >Is Post SAP?</label
       >
       <div class="p-col-12 p-md-5">
         <p-radioButton
@@ -425,7 +459,7 @@
           [(ngModel)]="city"
           inputId="city3"
         ></p-radioButton>
-        <label for="city3">New York</label>
+        <label for="city3">Close</label>
       </div>
       <div class="p-col-12 p-md-5">
         <p-radioButton
@@ -434,20 +468,29 @@
           [(ngModel)]="city"
           inputId="city3"
         ></p-radioButton>
-        <label for="city3">New York</label>
+        <label for="city3">Auto Post SAP</label>
+      </div>
+    </div>
+    <div class="p-field p-grid">
+      <label for="lastname" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
+        >Actual PNC QTY</label
+      >
+      <div class="p-col-12 p-md-10">
+        <p-inputNumber inputId="integeronly" [(ngModel)]="value1">
+        </p-inputNumber>
       </div>
     </div>
   </div>
   <ng-template pTemplate="footer">
     <p-button
       icon="pi pi-check"
-      (click)="displayBasic = false"
+      (click)="displayPostSAP = false"
       label="Confirm"
-      styleClass="p-button-text p-mr-4"
+      styleClass="p-button-text p-button-success p-mr-4"
     ></p-button>
     <p-button
-      icon="pi pi-check"
-      (click)="displayBasic = false"
+      icon="pi pi-trash"
+      (click)="displayPostSAP = false"
       label="Cancel"
       styleClass="p-button-text"
     ></p-button>
