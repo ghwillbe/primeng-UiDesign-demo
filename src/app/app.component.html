@@ -66,13 +66,20 @@
         [model]="items4"
         class="p-mr-2"
       ></p-splitButton>
-      <p-splitButton
+      <!-- <p-splitButton
         label="Post SAP"
         icon="pi pi-plus"
         (onClick)="showPostSAPDialog()"
         [model]="items5"
         class="p-mr-2"
-      ></p-splitButton>
+      ></p-splitButton> -->
+      <p-button
+        label="Post SAP"
+        icon="pi pi-plus"
+        [loading]="isLoading"
+        (onClick)="showPostSAPDialog()"
+        class="p-mr-2"
+      ></p-button>
       <p-button
         label="Download"
         icon="pi pi-download"
