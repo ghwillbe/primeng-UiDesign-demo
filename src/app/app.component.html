@@ -95,18 +95,13 @@
     [value]="products"
     [rows]="10"
     [paginator]="true"
-    [globalFilterFields]="[
-      'name',
-      'country.name',
-      'representative.name',
-      'status'
-    ]"
+    selectionMode="multiple"
     [(selection)]="selectedProducts"
     [rowHover]="true"
     dataKey="id"
     currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
     [showCurrentPageReport]="true"
-    (pSelectableRowDblClick)="showReadonlySignflow()"
+    (pSelectableRowDblClick)="showReadonlySignflow($event)"
     styleClass="p-mt-4"
   >
     <ng-template pTemplate="header">
@@ -114,28 +109,16 @@
         <th style="width: 3rem">
           <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
         </th>
-        <th pSortableColumn="name">
-          PNC No <p-sortIcon field="name"></p-sortIcon>
-        </th>
-        <th pSortableColumn="price">
-          PNC Qty <p-sortIcon field="price"></p-sortIcon>
-        </th>
-        <th pSortableColumn="category">
-          Form JPN <p-sortIcon field="category"></p-sortIcon>
-        </th>
-        <th pSortableColumn="rating">
-          To JPN <p-sortIcon field="rating"></p-sortIcon>
-        </th>
-        <th pSortableColumn="inventoryStatus">
-          Status <p-sortIcon field="inventoryStatus"></p-sortIcon>
-        </th>
-        <th pSortableColumn="inventoryStatus">
-          Actual PNC Qty <p-sortIcon field="inventoryStatus"></p-sortIcon>
-        </th>
+        <th>PNC No</th>
+        <th>PNC Qty</th>
+        <th>Form JPN</th>
+        <th>To JPN</th>
+        <th>Status</th>
+        <th>Actual PNC Qty</th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-product>
-      <tr>
+      <tr [pSelectableRow]="product">
         <td>
           <p-tableCheckbox [value]="product"></p-tableCheckbox>
         </td>
@@ -549,7 +532,7 @@
     <p-button
       icon="pi pi-check"
       (click)="displayReadonlySignflow = false"
-      label="Agree"
+      label="OK"
       styleClass="p-button-text p-button-success p-mr-4"
     ></p-button>
   </ng-template>

@@ -235,15 +235,18 @@ export class AppComponent implements OnInit {
   }
 
   showBasicDialog() {
+    console.log('dddd');
     this.displayBasic = true;
   }
 
   showPostSAPDialog() {
     this.displayBasic = false;
     this.displayPostSAP = true;
+    this.displayReadonlySignflow = true;
   }
 
-  showReadonlySignflow() {
+  showReadonlySignflow(event) {
+    console.log('test');
     this.displayReadonlySignflow = true;
   }
 }
