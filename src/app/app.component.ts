@@ -44,6 +44,7 @@ export class AppComponent implements OnInit {
   value1: number = 0;
   displayPostSAP: boolean;
   isPostSAP: string;
+  displayReadonlySignflow: boolean;
   constructor(
     private productService: ProductService,
     private messageService: MessageService,
@@ -240,6 +241,10 @@ export class AppComponent implements OnInit {
   showPostSAPDialog() {
     this.displayBasic = false;
     this.displayPostSAP = true;
+  }
+
+  showReadonlySignflow() {
+    this.displayReadonlySignflow = true;
   }
 }
 
