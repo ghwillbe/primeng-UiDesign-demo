@@ -101,7 +101,7 @@
     dataKey="id"
     currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
     [showCurrentPageReport]="true"
-    (pSelectableRowDblClick)="showReadonlySignflow($event)"
+    (onRowSelect)="showReadonlySignflow($event)"
     styleClass="p-mt-4"
   >
     <ng-template pTemplate="header">
@@ -118,7 +118,7 @@
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-product>
-      <tr [pSelectableRow]="product">
+      <tr [pSelectableRowDblClick]="product">
         <td>
           <p-tableCheckbox [value]="product"></p-tableCheckbox>
         </td>
