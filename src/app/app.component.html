@@ -122,7 +122,7 @@
         <td>
           <p-tableCheckbox [value]="product"></p-tableCheckbox>
         </td>
-        <td>{{ product.id }}</td>
+        <td style="min-width:250px">{{ product.id }}</td>
         <td>{{ product.price }}</td>
         <td>{{ product.category }}</td>
         <td>
@@ -376,7 +376,7 @@
       >
       <div class="p-col-12 p-md-5">
         <p-radioButton
-          name="city"
+          name="manual"
           value="Close"
           [(ngModel)]="isPostSAP"
           inputId="city3"
@@ -385,7 +385,7 @@
       </div>
       <div class="p-col-12 p-md-5">
         <p-radioButton
-          name="city"
+          name="post"
           value="New York"
           [(ngModel)]="isPostSAP"
           inputId="isPostSAP"
@@ -445,19 +445,19 @@
       >
       <div class="p-col-12 p-md-5">
         <p-radioButton
-          name="city"
-          value="New York"
-          [(ngModel)]="city"
-          inputId="city3"
+          name="manual"
+          value="N"
+          [(ngModel)]="isPostSAP"
+          inputId="city3111"
         ></p-radioButton>
         <label for="city3">Close</label>
       </div>
       <div class="p-col-12 p-md-5">
         <p-radioButton
-          name="city"
-          value="New York"
-          [(ngModel)]="city"
-          inputId="city3"
+          name="post"
+          value="Y"
+          [(ngModel)]="isPostSAP"
+          inputId="city3222"
         ></p-radioButton>
         <label for="city3">Auto Post SAP</label>
       </div>

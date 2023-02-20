@@ -242,7 +242,7 @@ export class AppComponent implements OnInit {
   showPostSAPDialog() {
     this.displayBasic = false;
     this.displayPostSAP = true;
-    this.displayReadonlySignflow = true;
+    // this.displayReadonlySignflow = true;
   }
 
   showReadonlySignflow(event) {
